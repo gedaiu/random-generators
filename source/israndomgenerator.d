@@ -3,9 +3,18 @@ module israndomgenerator;
 import std.stdio;
 import std.range;
 import std.array;
+import std.conv;
+
+int testNumber;
 
 bool isRandomGenerator(T)(T generator) {
-  auto sample = generator.take(100).array;
+  testNumber++;
+
+  auto sample = generator.take(1000).array;
+  auto f = File("test" ~ testNumber.to!string ~ ".csv", "w");
+
+  foreach(nr; sample)
+    f.writeln(nr);
 
   writeln("sample: ", sample);
   throw new Exception("Not implemented.");
