@@ -7,6 +7,8 @@ import std.conv;
 
 int testNumber;
 
+//TODO: create a function which generates CSVs from a generator
+
 bool isRandomGenerator(T)(T generator) {
   testNumber++;
 

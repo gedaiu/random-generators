@@ -12,7 +12,7 @@ import std.stdio;
 double z0, z1;
 bool shouldGenerate;
 
-auto normal(double mu, double sigma)() {
+double normal(double mu, double sigma)() {
   const double epsilon = double.min_normal;
   const double tau = 2 * PI;
 
@@ -20,7 +20,9 @@ auto normal(double mu, double sigma)() {
 
   if (!shouldGenerate)
   {
-    return z1 * sigma + mu;
+    auto randomNumber1 = z1 * sigma + mu;
+    if (randomNumber1 < 0 || randomNumber1 > 1) return normal!(mu, sigma)();
+    else return randomNumber1;
   }
 
   double u1, u2;
@@ -33,7 +35,10 @@ auto normal(double mu, double sigma)() {
 
   z0 = sqrt(-2.0 * log(u1)) * cos(tau * u2);
   z1 = sqrt(-2.0 * log(u1)) * sin(tau * u2);
-  return z0 * sigma + mu;
+
+  auto randomNumber2 = z0 * sigma + mu;
+  if (randomNumber2 < 0 || randomNumber2 > 1) return normal!(mu, sigma)();
+  else return randomNumber2;
 
 }
 
