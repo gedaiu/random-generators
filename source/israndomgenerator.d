@@ -5,18 +5,17 @@ import std.range;
 import std.array;
 import std.conv;
 
-int testNumber;
+import tools;
 
-//TODO: create a function which generates CSVs from a generator
+int testNumber;
 
 bool isRandomGenerator(T)(T generator) {
   testNumber++;
 
   auto sample = generator.take(1000).array;
-  auto f = File("test" ~ testNumber.to!string ~ ".csv", "w");
 
-  foreach(nr; sample)
-    f.writeln(nr);
+  sample.toCsv("test" ~ testNumber.to!string ~ ".csv");
+  sample.toHistCsv("hist" ~ testNumber.to!string ~ ".csv", 0.01);
 
   writeln("sample: ", sample);
   throw new Exception("Not implemented.");
