@@ -12,11 +12,11 @@ int testNumber;
 bool isRandomGenerator(T)(T generator) {
   testNumber++;
 
-  auto sample = generator.take(1000).array;
+  auto sample = generator.take(10000).array;
 
   sample.toCsv("test" ~ testNumber.to!string ~ ".csv");
   sample.toHistCsv("hist" ~ testNumber.to!string ~ ".csv", 0.01);
 
-  writeln("sample: ", sample);
+  //writeln("sample: ", sample);
   throw new Exception("Not implemented.");
 }
