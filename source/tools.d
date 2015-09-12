@@ -15,7 +15,7 @@ void toHistCsv(T)(T sample, string filename, double step) {
 
   ulong[] hist;
 
-  foreach(i; 0..size) {
+  foreach(i; 0..size + 1) {
     hist ~= [ 0 ];
   }
 
@@ -27,5 +27,5 @@ void toHistCsv(T)(T sample, string filename, double step) {
   auto f = File(filename, "w");
 
   foreach(key, val; hist)
-    f.writeln((key+1) * step, ",", val);
+    f.writeln(key * step, ",", val);
 }

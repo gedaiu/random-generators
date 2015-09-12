@@ -1,0 +1,21 @@
+module generators.binary;
+
+public import std.range;
+
+import tested;
+import israndomgenerator;
+import std.random;
+
+double builtinuniform()
+{
+  return uniform!"[]"(0, 1);
+}
+
+@name("it should return true for a binary random number")
+unittest {
+
+  auto generator = generate!builtinuniform();
+
+  auto result = isRandomGenerator(generator);
+  assert(result == true);
+}
