@@ -1,0 +1,6 @@
+name "random-generators"
+description "A minimal D application."
+copyright "Copyright © 2015, gedaiu"
+authors "gedaiu"
+dependencies
+	tested "~master"
