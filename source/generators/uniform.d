@@ -15,7 +15,7 @@ auto uniform(ulong a, ulong b)() {
   return (cast(double) old / cast(double) ulong.max);
 }
 
-@name("it should return true for generator which returns uniform distribution")
+@name("true for generator which returns uniform distribution")
 unittest {
   alias customUniform = uniform!(36969, 18000);
   auto generator = generate!customUniform();

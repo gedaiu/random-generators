@@ -11,7 +11,7 @@ double builtinuniform()
   return uniform(cast(double) 0, cast(double) 1);
 }
 
-@name("it should return true for the built in D generator which returns uniform distribution")
+@name("true for the built in D generator which returns uniform distribution")
 unittest {
 
   auto generator = generate!builtinuniform();

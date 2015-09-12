@@ -42,7 +42,7 @@ double normal(double mu, double sigma)() {
 
 }
 
-@name("it should return true for a normal distribution random generator")
+@name("true for a normal distribution random generator")
 unittest {
   alias normalDistribution = normal!(0.5, 0.15);
 

@@ -14,7 +14,7 @@ auto descendingSequence() {
   return number;
 }
 
-@name("it should return false for generator which returns the same sequence of descending numbers")
+@name("false for generator which returns the same sequence of descending numbers")
 unittest {
   auto generator = generate!descendingSequence();
 

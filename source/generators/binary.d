@@ -11,7 +11,7 @@ double builtinuniform()
   return uniform!"[]"(0, 1);
 }
 
-@name("it should return true for a binary random number")
+@name("true for a binary random number")
 unittest {
 
   auto generator = generate!builtinuniform();

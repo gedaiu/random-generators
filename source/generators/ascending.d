@@ -15,7 +15,7 @@ auto ascending() {
   return random;
 }
 
-@name("it should return false for generator which always returns a value equal to or larger than the previous")
+@name("false for generator which always returns a value equal to or larger than the previous")
 unittest {
   auto generator = generate!ascending();
 
