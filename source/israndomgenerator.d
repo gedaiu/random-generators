@@ -6,7 +6,6 @@ import std.array;
 import std.conv;
 
 import tools;
-
 int testNumber;
 
 bool isRandomGenerator(T)(T generator) {
