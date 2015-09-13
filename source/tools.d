@@ -13,7 +13,7 @@ void toCsv(T)(T sample, string filename) {
 auto toHist(T)(T sample, double step) {
   double size = 1 / step;
 
-  ulong[] hist;
+  long[] hist;
 
   foreach(i; 0..size + 1) {
     hist ~= [ 0 ];
