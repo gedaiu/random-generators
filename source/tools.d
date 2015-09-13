@@ -20,7 +20,7 @@ void toHistCsv(T)(T sample, string filename, double step) {
   }
 
   foreach(nr; sample) {
-    long pos = std.math.trunc(nr * size).to!long;
+    size_t pos = std.math.trunc(nr * size).to!size_t;
     hist[pos]++;
   }
 
