@@ -13,6 +13,6 @@ double constant() {
 unittest {
   auto generator = generate!constant();
 
-  auto result = isRandomGenerator(generator);
+  const auto result = isRandomGenerator(generator);
   assert(result == false);
 }

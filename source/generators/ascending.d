@@ -19,6 +19,6 @@ auto ascending() {
 unittest {
   auto generator = generate!ascending();
 
-  auto result = isRandomGenerator(generator);
+  const auto result = isRandomGenerator(generator);
   assert(result == false);
 }

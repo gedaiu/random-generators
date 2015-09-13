@@ -48,6 +48,6 @@ unittest {
 
   auto generator = generate!normalDistribution();
 
-  auto result = isRandomGenerator(generator);
+  const auto result = isRandomGenerator(generator);
   assert(result == true);
 }

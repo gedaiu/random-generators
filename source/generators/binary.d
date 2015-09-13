@@ -16,6 +16,6 @@ unittest {
 
   auto generator = generate!builtinuniform();
 
-  auto result = isRandomGenerator(generator);
+  const auto result = isRandomGenerator(generator);
   assert(result == true);
 }
