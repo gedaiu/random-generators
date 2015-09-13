@@ -42,12 +42,12 @@ double normal(double mu, double sigma)() {
 
 }
 
-@name("it should return true for a normal distribution random generator")
+@name("true for a normal distribution random generator")
 unittest {
   alias normalDistribution = normal!(0.5, 0.15);
 
   auto generator = generate!normalDistribution();
 
-  auto result = isRandomGenerator(generator);
+  const auto result = isRandomGenerator(generator);
   assert(result == true);
 }

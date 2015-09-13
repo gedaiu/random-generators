@@ -14,8 +14,7 @@ bool isRandomGenerator(T)(T generator) {
   auto sample = generator.take(10000).array;
 
   sample.toCsv("test" ~ testNumber.to!string ~ ".csv");
-  sample.toHistCsv("hist" ~ testNumber.to!string ~ ".csv", 0.01);
+  sample.toHistCsv("hist" ~ testNumber.to!string ~ ".csv", 0.1);
 
-  //writeln("sample: ", sample);
   throw new Exception("Not implemented.");
 }

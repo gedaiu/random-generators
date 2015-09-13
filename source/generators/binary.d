@@ -1,4 +1,4 @@
-module generators.builtinuniform;
+module generators.binary;
 
 public import std.range;
 
@@ -8,10 +8,10 @@ import std.random;
 
 double builtinuniform()
 {
-  return uniform(cast(double) 0, cast(double) 1);
+  return uniform!"[]"(0, 1);
 }
 
-@name("true for the built in D generator which returns uniform distribution")
+@name("true for a binary random number")
 unittest {
 
   auto generator = generate!builtinuniform();
