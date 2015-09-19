@@ -23,7 +23,7 @@ switch(value) {
   case 3: writeln(3, "rd"); break;
   default: writeln(value, "th"); break;
 }
-
+```
 ## Iteration
 ### for
 ```
