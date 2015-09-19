@@ -1,5 +1,7 @@
 module generators.normaldistribution;
 
+version(advanced):
+
 public import std.range;
 
 import tested;
@@ -9,9 +11,14 @@ import std.algorithm.comparison;
 import std.math;
 import std.stdio;
 
-double z0, z1;
-bool shouldGenerate;
+private {
+  double z0, z1;
+  bool shouldGenerate;
+}
 
+/**
+  Returns a random number, based on the normal distribution.
+*/
 double normal(double mu, double sigma)() {
   const double epsilon = double.min_normal;
   const double tau = 2 * PI;

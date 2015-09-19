@@ -5,6 +5,9 @@ public import std.range;
 import tested;
 import israndomgenerator;
 
+/**
+  Returns 0.5 constantwww
+*/
 double constant() {
   return 0.5;
 }

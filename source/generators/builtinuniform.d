@@ -6,6 +6,9 @@ import tested;
 import israndomgenerator;
 import std.random;
 
+/**
+  Returns a random number
+*/
 double builtinuniform()
 {
   return uniform(cast(double) 0, cast(double) 1);

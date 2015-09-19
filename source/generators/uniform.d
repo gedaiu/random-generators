@@ -6,8 +6,15 @@ import tested;
 import israndomgenerator;
 import std.algorithm.comparison;
 
-ulong old = ulong.max / 4;
+protected {
+  enum A = 36969;
+  enum B = 18000;
 
+  ulong old = ulong.max / 4;
+}
+/**
+  Pseudo random number generator implementation
+*/
 auto uniform(ulong a, ulong b)() {
   old = a * old + b;
 
@@ -16,8 +23,8 @@ auto uniform(ulong a, ulong b)() {
 
 @name("true for generator which returns uniform distribution")
 unittest {
-  alias customUniform = uniform!(36969, 18000);
-  auto generator = generate!customUniform();
+  alias custom_uniform = uniform!(A, B);
+  auto generator = generate!custom_uniform();
 
   const auto result = isRandomGenerator(generator);
   assert(result == true);

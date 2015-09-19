@@ -1,8 +1,16 @@
 module tools;
 
+version = advanced;
+
 import std.stdio;
 import std.conv;
 
+/**
+  Save a range to a csv file.
+
+  Example:
+    sample.toCsv("test.csv");
+*/
 void toCsv(T)(T sample, string filename) {
   auto f = File(filename, "w");
 
@@ -10,6 +18,12 @@ void toCsv(T)(T sample, string filename) {
     f.writeln(nr);
 }
 
+/**
+  Create a histogram from a range
+
+  Example:
+    sample.toHist(0.1);
+*/
 auto toHist(T)(T sample, double step) {
   double size = 1 / step;
 
@@ -27,6 +41,12 @@ auto toHist(T)(T sample, double step) {
   return hist;
 }
 
+/**
+  Create a histogram from a range and saves it to a csv file
+
+  Example:
+    sample.toHistCsv("test.csv", 0.1);
+*/
 void toHistCsv(T)(T sample, string filename, double step) {
   auto f = File(filename, "w");
 
