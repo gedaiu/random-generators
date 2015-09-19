@@ -6,7 +6,5 @@
 
 	"dependencies": {
 		"tested": "~master"
-	},
-
-	"versions": ["advanced"] 
+	}
 }
